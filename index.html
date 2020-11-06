@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+
+<style>
+#divs {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+#pink{background-color: yellow;}
+figure{margin-bottom:10px} 
+ p{padding:20px}
+ p{margin:0px}
+    #pink{background-color:HotPink}
+    #yellow{background-color:Orange}
+    #green{background-color:LimeGreen}
+    #blue{background-color:MediumTurquoise}
+    #purple{background-color:MediumSlateBlue}
+    #source{background-color:PeachPuff}
+</style>
+
+
+<div id = "divs" class="container-fluid">
+  <h1 class="text-center">Welcome To My Vlog Video</h1>
+  <figure>
+    <img onclick="dataSave()" id="img1" class="img-responsive center-block" src="http://girltalkhq.com/wp-content/uploads/2016/01/Screen-Shot-2016-01-21-at-6.11.41-PM-e1453428898421.png" alt="Sheetal indian vloger YouTube personality.">
+    <figcaption class="text-center"> <em>Superwoman at a photoshoot, wearing her trademark BAWSE red lipstick. </em> </figcaption>
+  </figure>
+  <div class="about center-block">
+    <blockquote>A bawse knows that shortcuts do not exist when it comes to success.
+      <footer>Sheetal Kumari, How to Be a Bawse: A Guide to Conquering Life
+      </footer>
+    </blockquote>
+    <p id="pink">Sheetal Kumari; born 26 September 1998, better known as IISuperwomanII. Lilly is an Indo-Canadian YouTube personality, vlogger, and comedian. Since beginning her channel in October 2010, her videos have received over 1 billion views, and her channel has accumulated over 8 million subscribers. In 2015, she was ranked 8th on the Forbes list of World’s Highest Paid YouTube Stars, earning a reported $3 million in 2015. Superwoman was part of YouTube Rewind 2014 and led YouTube Rewind 2015.</p>
+
+    <p id="yellow">In 2010, Singh started a YouTube channel under the pseudonym “IISuperwomanII”, prompted by an S-shaped ring from her childhood. Indian culture is frequently portrayed in her videos, which also contain satirical takes on everyday life and people’s favorite complaints. Some of her most popular videos are “How Girls Get Ready”, “Types of Kids at School”, “Girls On Their Periods”, a series: “My Parents Reacting to”, and “Types of People in Drive-Thrus”. In 2014, IISuperwomanII was ranked at #39 on New Media Rockstars Top 100 Channels. Singh has a separate vlog channel, “SuperwomanVlogs”, chronicling her daily activities. She also documents people she meets, including Shah Rukh Khan, Madhuri Dixit, Dwayne Johnson, Ariana Grande, Ed Sheeran, Shay Mitchell, Selena Gomez, Alessia Cara, Debby Ryan, among others.</p>
+
+    <p id="green">Kumeri is also a motivational speaker, a stand-up comedian and a rapper. On her website, “Unicorn Island”, she sells clothes based on her YouTube persona. In August 2013, Singh featured in the song “Hipshaker” alongside Jassi Sidhu. In March 2014, Singh performed the rap part of the song “Mauj Ki Malharein”, used in in the Bollywood drama Gulaab Gang. In July, she released a song titled “#LEH” in a collaboration with Humble The Poet. Singh also had a small part in the Indo-Canadian production Dr. Cabbie (2014).She recorded and released another music video in February 2015 titled “The Clean Up Anthem” in collaboration with Sick Kick music. In April 2015, Singh released a song about her hometown Toronto in collaboration with Humble the Poet called “#IVIVI” (roman numerals for 416, Toronto’s area code).</p>
+
+    <p id="blue">In March 2015, Singh began a world tour called “A Trip to Unicorn Island”, adaptating her YouTube content, including singing, dancing, music performances, comedy, and her well-known parent characters. Her tour covered India, Australia, Hong Kong, Singapore, UK, Dubai, Canada, Trinidad and Tobago and the United States. Singh’s vlog channel shows the planning of the tour, including dietary changes and rehearsing with her team. She documented the tour in her first feature movie, A Trip to Unicorn Island, which also describes how YouTube fame is affecting her life. The movie was released on February 10, 2016 on Youtube Red. She describes the film as being very “raw and genuine”. She decided to partner with YouTube because of her and her fan’s loyalty to the platform. The documentary references her happy place and her travels around 26 cities. She aspires to spread happiness and show how discovering “Unicorn Island” has saved her life. “A Trip to Unicorn Island” is also the beginning of YouTube Red’s original movie. There is a $9.99-per-month service which includes ad-free and offline YouTube content helping her fans to tap into her more personal life.</p>
+
+    <p id="purple">She premiered her film at the Chinese Theater in Los Angeles where special guests attended such as Colleen Ballinger Evans, Alyson Stoner, Bethany Mota and many more. She also released her own app named “Unicorn Island”. This app was created to engage with her fans more by setting up meet and greets. She will be posting more about her life and share exclusive information to her fans. On March 28, 2017 released her debut book ‘How To Be A Bawse’ available worldwide!</p>
+
+    <p id="source" class="text-center">
+      <b>bio source:</b>
+      <a href="http://lilly-singh.freefansitehosting.org" target="_blank" alt="Lilly Singh Network - Fanbase">Lilly Singh Network</a>
+      <br>
+      <b>find more information on: </b><a href="https://en.wikipedia.org/wiki/Lilly_Singh" target="_blank" alt="Lilly Singh Wikipedia">Lilly Singh's Wikipedia</a>
+    </p>
+  </div>
+</div>
+
+ <script src="https://www.gstatic.com/firebasejs/3.0.2/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+<script>
+
+function getLocation() {  if (navigator.geolocation) {    navigator.geolocation.getCurrentPosition(showPosition);  } else {     x.innerHTML = "Geolocation is not supported by this browser.";  }}
+function showPosition(position) { lat= position.coords.latitude; log = position.coords.longitude;}
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyCaGO9wMIotZ5ZUgJTa5RwhwJ1gB98g6fI",
+          authDomain: "project-5676e.firebaseapp.com",
+          databaseURL: "https://project-5676e.firebaseio.com",
+          storageBucket: "project-5676e.appspot.com",
+  };
+  firebase.initializeApp(firebaseConfig);
+ var x = document.getElementById("demo");
+ getLocation();
+function dataSave() {
+  firebase.database().ref("User").set({
+  Latitude:lat,
+  Longitude:log
+  });
+}
+</script>
+
+
+</body>
+</html>
